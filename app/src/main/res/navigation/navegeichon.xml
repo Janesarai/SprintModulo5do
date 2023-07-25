@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navegeichon"
+    app:startDestination="@id/fragmentComprar">
+
+    <fragment
+        android:id="@+id/fragmentComprar"
+        android:name="com.example.sprintmodulo5do.FragmentComprar"
+        android:label="fragment_comprar"
+        tools:layout="@layout/fragment_comprar" >
+        <action
+            android:id="@+id/action_fragmentComprar_to_fragmentDetalle"
+            app:destination="@id/fragmentDetalle" />
+        <action
+            android:id="@+id/action_fragmentComprar_to_fragmentCarrito"
+            app:destination="@id/fragmentCarrito" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCarrito"
+        android:name="com.example.sprintmodulo5do.FragmentCarrito"
+        android:label="fragment_carrito"
+        tools:layout="@layout/fragment_carrito" >
+        <action
+            android:id="@+id/action_fragmentCarrito_to_fragmentComprar"
+            app:destination="@id/fragmentComprar" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetalle"
+        android:name="com.example.sprintmodulo5do.FragmentDetalle"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_fragmentDetalle_to_fragmentCarrito"
+            app:destination="@id/fragmentCarrito" />
+    </fragment>
+</navigation>
