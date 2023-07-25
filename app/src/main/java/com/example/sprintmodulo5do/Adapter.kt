@@ -11,22 +11,23 @@ import com.example.sprintmodulo5do.databinding.ItemLayoutBinding
 class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
 
 
-  var zapatillas = mutableListOf<ZapatillaList>()
+  var zapatillas = mutableListOf<Zapatillas>()
 
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
     var binding =ItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent , false)
     return ViewHolder(binding)
   }
+  override fun onBindViewHolder(holder: Adapter.ViewHolder, position: Int) {
+    var item = zapatillas[position]
+    holder.bind(item)
+  }
 
   override fun getItemCount(): Int {
     return zapatillas.size
   }
 
-  override fun onBindViewHolder(holder: Adapter.ViewHolder, position: Int) {
-    var item = zapatillas[position]
-    holder.bind(item)
-  }
+
   fun setData(listazapatos: List<Zapatillas>){
     zapatillas = listazapatos.toMutableList()
   }
@@ -40,10 +41,11 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
       val bundle = Bundle()
       bundle.putString("nombre",item.nombre)
       bundle.putString("precio", item.precio.toString())
-      bundle.putString("url",item.imgUrl)
+      bundle.putString("imgUrl",item.imgUrl)
       binding.CardViewComprar.setOnClickListener({
         Navigation.findNavController(binding.root).navigate(R.id.action_fragmentComprar_to_fragmentDetalle,bundle)
       })
+
     }
   }
 }
