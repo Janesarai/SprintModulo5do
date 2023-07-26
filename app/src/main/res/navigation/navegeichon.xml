@@ -35,9 +35,4 @@
             android:id="@+id/action_fragmentDetalle_to_fragmentCarrito"
             app:destination="@id/fragmentCarrito" />
     </fragment>
-    <activity
-        android:id="@+id/mainActivity2"
-        android:name="com.example.sprintmodulo5do.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
 </navigation>

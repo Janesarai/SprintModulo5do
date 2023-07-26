@@ -36,7 +36,7 @@ class Adapter: RecyclerView.Adapter<Adapter.ViewHolder>() {
     fun bind(item:Zapatillas){
 
       binding.txZapatilla.text = item.nombre
-      binding.txPrecio.text = item.precio.toString()
+      binding.txPrecio.text= item.precio.toString()
       binding.imgZapatilla.load(item.imgUrl)
       val bundle = Bundle()
       bundle.putString("nombre",item.nombre)
